@@ -4,33 +4,69 @@ public class Main
 {
   public static void main(String[] args)
   {
-    // TODO: Make an array of doubles, and test your sumArray method
+    // Test the sumArray method with an array of doubles
+    double[] doubleArray = {1.2, 3.4, 5.6, 7.8};
+    System.out.println("Sum of array: " + sumArray(doubleArray));
 
-    // TODO: Make an array of Strings, and test your averageLength method
+    // Test the averageLength method with an array of Strings
+    String[] stringArray = {"hello", "world", "java", "programming"};
+    System.out.println("Average length of strings: " + averageLength(stringArray));
 
-    // TODO: Make an array of ints, and test your arrayMax method
+    // Test the arrayMax method with an array of ints
+    int[] intArray = {3, 5, 7, 2, 9, 4};
+    System.out.println("Maximum value in array: " + arrayMax(intArray));
 
-    // TODO: Make an array of Strings as well as a target, and test your linearSearch method
+    // Test the linearSearch method with an array of Strings and a target String
+    String[] searchArray = {"apple", "banana", "cherry", "date"};
+    String target = "banana";
+    System.out.println("Is target found? " + linearSearch(searchArray, target));
   }
 
 
+  // Method to return the sum of an array of doubles
   public static double sumArray(double[] arr)
   {
-    return 0.0;
+    double sum = 0.0;
+    for (double num : arr) {
+      sum += num;
+    }
+    return sum;
   }
 
+  // Method to return the average length of strings in an array
   public static double averageLength(String[] arr)
   {
-    return 0.0;
+    if (arr.length == 0) {
+      return 0.0;
+    }
+
+    int totalLength = 0;
+    for (String str : arr) {
+      totalLength += str.length();
+    }
+    return (double) totalLength / arr.length;
   }
 
+  // Method to return the maximum value in an array of integers
   public static int arrayMax(int[] arr)
   {
-    return Integer.MIN_VALUE;
+    int max = Integer.MIN_VALUE;
+    for (int num : arr) {
+      if (num > max) {
+        max = num;
+      }
+    }
+    return max;
   }
 
-  public static boolean linearSearch(String[] arr)
+  // Method to return true if the target string is found in the array, otherwise false
+  public static boolean linearSearch(String[] arr, String target)
   {
+    for (String str : arr) {
+      if (str.equals(target)) {
+        return true;
+      }
+    }
     return false;
   }
 }
